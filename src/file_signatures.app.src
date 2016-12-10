@@ -1,0 +1,26 @@
+{application, file_signatures,
+ [{description, "File signatures module for OTP"}
+  , {vsn, "0.1.0"}
+  , {registered, []}
+  , {applications, [
+                    kernel,
+                    stdlib
+                   ]}
+  , {env,[]}
+  , {modules, []}
+
+  , {maintainers, ["Gregoire Lejeune"]}
+  , {licenses, ["BSD-3"]}
+  , {links, [{"Github", "https://github.com/botsunit/kafe"}]}
+  , {files, ["src/*"
+             , "include/*"
+             , "lib/*"
+             , "Makefile"
+             , "bu.mk"
+             , "README.md"
+             , "rebar.config"
+             , "rebar.lock"
+             , "mix.exs"
+             , "mix.lock"]}
+  , {build_tools, ["rebar3", "mix", "make"]}
+ ]}.
