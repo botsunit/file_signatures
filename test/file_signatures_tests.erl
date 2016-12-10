@@ -17,6 +17,13 @@ file_signatures_tests_test_() ->
           _ ->
             ok
         end
+    end,
+    fun() ->
+        ?assertEqual(ok, file_signatures:is_type(<<"test/files/gif.gif">>, [zip, png, gif])),
+        ?assertEqual({error, invalid_signature},
+                     file_signatures:is_type(<<"test/files/gif.gif">>, [titi, tata, toto])),
+        ?assertEqual({error, invalid_signature},
+                     file_signatures:is_type(<<"test/files/gif.gif">>, [bz2, zip, z]))
     end
    ]}.
 
