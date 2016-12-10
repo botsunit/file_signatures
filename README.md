@@ -8,6 +8,11 @@ __Version:__ 1.0.0
 
 __Authors:__ Gregoire Lejeune ([`gregoire.lejeune@botsunit.com`](mailto:gregoire.lejeune@botsunit.com)).
 
+
+## Supported file signatures ##
+
+aif aifc aiff apk asf avi bmp bz2 class dib docx flv gif gz ico iff jar jpeg lz4 m4a m4v mid midi mk3d mka mks mkv mov mp3 mp4 mpeg mpg odp ods odt oga ogg ogv pdf png pptx ps rar snd tar tiff vsdx wav webm wma wmv xlsx z zip
+
 Copyright (c) 2015, 2016 BotsUnit<br />
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:* Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.

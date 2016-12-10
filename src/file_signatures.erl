@@ -2,6 +2,7 @@
 
 -export([is_type/2]).
 
+-spec is_type(file:name_all(), atom()) -> ok | {error, term()}.
 is_type(Filename, Type) ->
   case file:read_file(Filename) of
     {ok, Binary} ->
@@ -10,6 +11,7 @@ is_type(Filename, Type) ->
       Error
   end.
 
+% @hidden
 verify_signature(Data, Type) ->
   try
     case erlang:apply(files_signatures, Type, [Data]) of

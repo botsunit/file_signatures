@@ -20,5 +20,8 @@
 
 ### is_type/2 ###
 
-`is_type(Filename, Type) -> any()`
+<pre><code>
+is_type(Filename::<a href="file.md#type-name_all">file:name_all()</a>, Type::atom()) -&gt; ok | {error, term()}
+</code></pre>
+<br />
 
