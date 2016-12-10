@@ -23,5 +23,5 @@ THIS SOFTWARE IS PROVIDED BY THE AUTHOR `AS IS` AND ANY EXPRESS OR IMPLIED WARRA
 
 
 <table width="100%" border="0" summary="list of modules">
-<tr><td><a href="https://gitlab.botsunit.com/msaas/sts/blob/master/doc/file_signatures.md" class="module">file_signatures</a></td></tr></table>
+<tr><td><a href="https://github.com/botsunit/file_signatures/blob/master/doc/file_signatures.md" class="module">file_signatures</a></td></tr></table>
 
