@@ -20,6 +20,7 @@ jpeg(<<16#FF, 16#D8, 16#FF, 16#E0, _:1/binary, _:1/binary,
 jpeg(<<16#FF, 16#D8, 16#FF, 16#E1, _:1/binary, _:1/binary,
        16#45, 16#78, 16#69, 16#66, 16#00, 16#00, _/binary>>) -> true;
 jpeg(_) -> false.
+jpg(Data) -> jpeg(Data).
 
 zip(<<16#50, 16#4B, 16#03, 16#04, _/binary>>) -> true;
 zip(<<16#50, 16#4B, 16#05, 16#06, _/binary>>) -> true;
