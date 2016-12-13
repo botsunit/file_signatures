@@ -14,11 +14,23 @@ gif(<<16#47, 16#49, 16#46, 16#38, 16#37, 16#61, _/binary>>) -> true;
 gif(<<16#47, 16#49, 16#46, 16#38, 16#39, 16#61, _/binary>>) -> true;
 gif(_) -> false.
 
-jpeg(<<16#FF, 16#D8, 16#FF, 16#DB, _/binary>>) -> true;
+jpeg(<<16#FF, 16#D8, 16#FF, 16#DB,
+       _/binary>>) -> true;
 jpeg(<<16#FF, 16#D8, 16#FF, 16#E0, _:1/binary, _:1/binary,
-       16#4A, 16#46, 16#49, 16#46, 16#00, 16#01, _/binary>>) -> true;
+       16#4A, 16#46, 16#49, 16#46, 16#00,
+       _/binary>>) -> true;
 jpeg(<<16#FF, 16#D8, 16#FF, 16#E1, _:1/binary, _:1/binary,
-       16#45, 16#78, 16#69, 16#66, 16#00, 16#00, _/binary>>) -> true;
+       16#45, 16#78, 16#69, 16#66, 16#00,
+       _/binary>>) -> true;
+jpeg(<<16#FF, 16#D8, 16#FF, 16#E2,
+       _/binary>>) -> true;
+jpeg(<<16#FF, 16#D8, 16#FF, 16#E3,
+       _/binary>>) -> true;
+jpeg(<<16#FF, 16#D8, 16#FF, 16#FE,
+       _/binary>>) -> true;
+jpeg(<<16#FF, 16#D8, 16#FF, 16#E8, _:1/binary, _:1/binary,
+       16#53, 16#50, 16#49, 16#46, 16#46, 16#00,
+       _/binary>>) -> true;
 jpeg(_) -> false.
 jpg(Data) -> jpeg(Data).
 
@@ -135,6 +147,8 @@ mp4(<<_:1/binary, _:1/binary, _:1/binary, _:1/binary,
       16#66, 16#74, 16#79, 16#70, 16#4D, 16#53, 16#4E, 16#56, _/binary>>) -> true;
 mp4(<<_:1/binary, _:1/binary, _:1/binary, _:1/binary,
       16#66, 16#74, 16#79, 16#70, 16#69, 16#73, 16#6F, 16#6D, _/binary>>) -> true;
+mp4(<<_:1/binary, _:1/binary, _:1/binary, _:1/binary,
+      16#66, 16#74, 16#79, 16#70, 16#6D, 16#70, 16#34, 16#32, _/binary>>) -> true;
 mp4(_) -> false.
 
 m4a(<<_:1/binary, _:1/binary, _:1/binary, _:1/binary,
@@ -149,6 +163,16 @@ mov(<<_:1/binary, _:1/binary, _:1/binary, _:1/binary,
       16#66, 16#74, 16#79, 16#70, 16#71, 16#74, 16#20, 16#20, _/binary>>) -> true;
 mov(<<_:1/binary, _:1/binary, _:1/binary, _:1/binary,
       16#6D, 16#6F, 16#6F, 16#76, _/binary>>) -> true;
+mov(<<_:1/binary, _:1/binary, _:1/binary, _:1/binary,
+      16#66, 16#72, 16#65, 16#65, _/binary>>) -> true;
+mov(<<_:1/binary, _:1/binary, _:1/binary, _:1/binary,
+      16#6D, 16#64, 16#61, 16#74, _/binary>>) -> true;
+mov(<<_:1/binary, _:1/binary, _:1/binary, _:1/binary,
+      16#77, 16#69, 16#64, 16#65, _/binary>>) -> true;
+mov(<<_:1/binary, _:1/binary, _:1/binary, _:1/binary,
+      16#70, 16#6E, 16#6F, 16#74, _/binary>>) -> true;
+mov(<<_:1/binary, _:1/binary, _:1/binary, _:1/binary,
+      16#73, 16#6B, 16#69, 16#70, _/binary>>) -> true;
 mov(_) -> false.
 
 mpeg(<<16#00, 16#00, 16#01, 16#BA, _/binary>>) -> true;
