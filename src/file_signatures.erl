@@ -55,14 +55,6 @@ is_valid(Filename) when is_list(Filename) ->
 is_valid(Filename) when is_binary(Filename) ->
   is_valid(erlang:binary_to_list(Filename)).
 
-signature(Filename) ->
-  case file:read_file(Filename) of
-    {ok, Binary} ->
-      signature(Binary, files_signatures:module_info(exports));
-    Error ->
-      Error
-  end.
-
 % @doc
 % Return the first matching signature for <tt>Filename</tt>.
 %
@@ -72,6 +64,15 @@ signature(Filename) ->
 % </pre>
 % @end
 -spec signature(file:name_all()) -> atom() | undefined.
+signature(Filename) ->
+  case file:read_file(Filename) of
+    {ok, Binary} ->
+      signature(Binary, files_signatures:module_info(exports));
+    Error ->
+      Error
+  end.
+
+% @hidden
 signature(_, []) ->
   undefined;
 signature(Data, [{Type, 1}|Rest]) when Type =/= module_info ->
