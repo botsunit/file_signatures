@@ -149,6 +149,8 @@ mp4(<<_:1/binary, _:1/binary, _:1/binary, _:1/binary,
       16#66, 16#74, 16#79, 16#70, 16#69, 16#73, 16#6F, 16#6D, _/binary>>) -> true;
 mp4(<<_:1/binary, _:1/binary, _:1/binary, _:1/binary,
       16#66, 16#74, 16#79, 16#70, 16#6D, 16#70, 16#34, 16#32, _/binary>>) -> true;
+mp4(<<_:1/binary, _:1/binary, _:1/binary, _:1/binary,
+      16#66, 16#74, 16#79, 16#70, _/binary>>) -> true;
 mp4(_) -> false.
 
 m4a(<<_:1/binary, _:1/binary, _:1/binary, _:1/binary,
